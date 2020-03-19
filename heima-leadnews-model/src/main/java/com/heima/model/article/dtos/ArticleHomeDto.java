@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
+@SuppressWarnings("all")
 public class ArticleHomeDto {
 
     // 省市
