@@ -6,6 +6,9 @@ import org.apache.ibatis.type.Alias;
 
 import java.util.Date;
 
+/**
+ * @author lbt
+ */
 @Data
 public class ApBehaviorEntry {
     private Integer id;
@@ -25,9 +28,6 @@ public class ApBehaviorEntry {
     }
 
     public boolean isUser(){
-        if(this.getType()!=null&&this.getType()== Type.USER.getCode()){
-            return true;
-        }
-        return false;
+        return this.getType() != null && this.getType() == Type.USER.getCode();
     }
 }
