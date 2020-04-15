@@ -32,6 +32,7 @@ public class AppShowBehaviorServiceImpl implements AppShowBehaviorService {
     @Autowired
     private ApBehaviorEntryMapper apBehaviorEntryMapper;
 
+    @SuppressWarnings("all")
     @Override
     public ResponseResult saveShowBehavior(ShowBehaviorDto dto) {
         ApUser user = AppThreadLocalUtils.getUser();
@@ -56,9 +57,7 @@ public class AppShowBehaviorServiceImpl implements AppShowBehaviorService {
         List<ApShowBehavior> list = apShowBehaviorMapper.selectListByEntryIdAndArticleIds(apBehaviorEntry.getId(),temp);
         List<Integer> stringList = new ArrayList<>(Arrays.asList(temp));
         if (!list.isEmpty()){
-            list.forEach(item -> {
-                stringList.remove(item.getArticleId());
-            });
+            list.forEach(item -> stringList.remove(item.getArticleId()));
         }
 
         //插入新数据
