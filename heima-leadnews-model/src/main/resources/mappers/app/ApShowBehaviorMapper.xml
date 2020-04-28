@@ -23,7 +23,7 @@
     </select>
 
     <insert id="saveBehaviors">
-
+        /*!mycat:catlet=io.mycat.route.sequence.BatchInsertSequence */
         insert into ap_show_behavior (id, entry_id, article_id,is_click, show_time, created_time)
         values
         <foreach collection="articleIds" item="item" separator=",">
